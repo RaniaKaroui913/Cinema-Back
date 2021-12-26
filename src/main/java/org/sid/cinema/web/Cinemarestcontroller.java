@@ -41,7 +41,7 @@ public class Cinemarestcontroller {
 	public byte [] image (@PathVariable (name="id")Long id) throws Exception{
 		Film f=filmrep.findById(id).get();
 		String imagename=f.getPhoto();
-		File file=new File(System.getProperty("user.home")+"\\Desktop\\Nouveau dossier (2)\\JEE\\Cinema\\"+imagename);
+		File file=new File(System.getProperty("user.home")+"\\cinema\\images\\"+imagename);
 		java.nio.file.Path path=Paths.get(file.toURI());	
 		return Files.readAllBytes(path);
 	}
